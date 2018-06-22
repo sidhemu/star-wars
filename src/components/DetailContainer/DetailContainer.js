@@ -1,14 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import ProlieDetailCard from '../ProfileDetailCard/ProlieDetailCard';
-import MovieDetailCard from '../MovieDetailCard/MovieDetailCard';
-import PlanetDetailCard from '../PlanetDetailCard/PlanetDetailCard';
+import ProfileDetailcard from '../DetailCard/ProfileDetailCard/ProfileDetailcard';
+import MovieDetailCard from '../DetailCard/MovieDetailCard/MovieDetailCard';
+import PlanetDetailCard from '../DetailCard/PlanetDetailCard/PlanetDetailCard';
 
-const DetailConatiner = props => {
+const DetailContainer = props => {
   if (props.type === 'peopleDetail') {
     return (
       <div>
-        <ProlieDetailCard detailData={props.detailData} />
+        <ProfileDetailcard detailData={props.detailData} />
       </div>
     );
   }
@@ -29,4 +30,8 @@ const DetailConatiner = props => {
   }
 };
 
-export default DetailConatiner;
+DetailContainer.propTypes = {
+  detailData: PropTypes.object
+};
+
+export default DetailContainer;

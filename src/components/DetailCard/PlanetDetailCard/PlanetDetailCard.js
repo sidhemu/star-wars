@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import { Card, CardContent, Typography } from '@material-ui/core';
 
 import './planetDetailCardStyle.css';
@@ -46,6 +46,20 @@ const PlanetDetailCard = props => {
   } else {
     return null;
   }
+};
+
+PlanetDetailCard.propTypes = {
+  detailData: PropTypes.shape({
+    name: PropTypes.string,
+    rotation_period: PropTypes.string,
+    orbital_period: PropTypes.string,
+    diameter: PropTypes.string,
+    climate: PropTypes.string,
+    gravity: PropTypes.string,
+    terrain: PropTypes.string,
+    surface_water: PropTypes.string,
+    population: PropTypes.string
+  })
 };
 
 export default PlanetDetailCard;

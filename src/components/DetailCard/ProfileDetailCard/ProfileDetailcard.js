@@ -1,10 +1,10 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import { Card, CardContent, Typography } from '@material-ui/core';
 
-import './prolieDetailCardStyle.css';
+import './profileDetailCardStyle.css';
 
-const ProlieDetailCard = props => {
+const ProfileDetailcard = props => {
   if (Object.keys(props.detailData).length > 0) {
     return (
       <div>
@@ -42,4 +42,16 @@ const ProlieDetailCard = props => {
   }
 };
 
-export default ProlieDetailCard;
+ProfileDetailcard.propTypes = {
+  detailData: PropTypes.shape({
+    name: PropTypes.string,
+    gender: PropTypes.string,
+    height: PropTypes.string,
+    mass: PropTypes.string,
+    hair_color: PropTypes.string,
+    eye_color: PropTypes.string,
+    birth_year: PropTypes.string
+  })
+};
+
+export default ProfileDetailcard;

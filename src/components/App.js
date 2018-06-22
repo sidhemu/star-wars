@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
 import Listing from './Listing/ListingType';
 import DetailContainer from './DetailContainer/DetailContainer';
 
@@ -9,7 +10,6 @@ import {
   Button,
   AppBar,
   Toolbar,
-  Typography,
   Drawer,
   List,
   ListItem
@@ -36,7 +36,6 @@ class App extends Component {
   }
 
   handleType(type) {
-    console.log('type from detail ', type);
     this.setState({ detailType: type });
   }
 
@@ -138,8 +137,6 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state);
-
   return state;
 }
 

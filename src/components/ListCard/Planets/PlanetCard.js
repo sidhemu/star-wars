@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { Grid, Row } from 'react-bootstrap';
 import {
   Card,
@@ -9,7 +10,7 @@ import {
   Button
 } from '@material-ui/core';
 
-import { fetchDetails } from '../../actions';
+import { fetchDetails } from '../../../actions';
 
 import './planetStyle.css';
 
@@ -29,7 +30,7 @@ class PlanetCard extends Component {
       <Grid fluid>
         <h3 className="title">Planets</h3>
         <Row className="show-grid">
-          {this.props.planetList.map((planet, index) => {
+          {this.props.dataList.map((planet, index) => {
             return (
               <Card className="card" key={index}>
                 <CardContent>
@@ -62,6 +63,10 @@ class PlanetCard extends Component {
     );
   }
 }
+
+PlanetCard.propTypes = {
+  dataList: PropTypes.array
+};
 
 export default connect(
   null,

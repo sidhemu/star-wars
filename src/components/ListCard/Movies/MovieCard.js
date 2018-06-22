@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 import { Grid, Row } from 'react-bootstrap';
 import {
   Card,
@@ -9,46 +11,48 @@ import {
   Button
 } from '@material-ui/core';
 
-import { fetchDetails } from '../../actions';
+import { fetchDetails } from '../../../actions';
 
-import './profileStyle.css';
+import './movieStyle.css';
 
-class ProfileCard extends Component {
+class MovieCard extends Component {
   constructor(props) {
     super(props);
-
     this.state = {};
     this.showData = this.showData.bind(this);
   }
 
   showData(url) {
-    this.props.fetchDetails(url, 'RECEIVE_PROFILEDATA');
-    this.props.getInput('peopleDetail');
+    this.props.fetchDetails(url, 'RECEIVE_MOVIEDATA');
+    this.props.getInput('movieDetail');
   }
   render() {
     return (
       <Grid fluid>
-        <h3 className="title">Characters</h3>
+        <h3 className="title">Movies</h3>
         <Row className="show-grid">
-          {this.props.peoplesList.map((people, index) => {
+          {this.props.dataList.map((movie, index) => {
             return (
               <Card className="card" key={index}>
                 <CardContent>
+                  <Typography className="title" color="textSecondary">
+                    {movie.director}
+                  </Typography>
                   <Typography variant="headline" component="h2">
-                    {people.name}
+                    {movie.title}
                   </Typography>
                   <Typography className="secondary-text" color="textSecondary">
-                    Gender : <span>{people.gender}</span>
+                    {movie.producer}
                   </Typography>
-                  <Typography className="secondary-text" color="textSecondary">
-                    Height : <span>{people.height}</span>
+                  <Typography
+                    className="secondary-text release-date"
+                    component="p"
+                  >
+                    Released Date : {movie.release_date}
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button
-                    size="small"
-                    onClick={() => this.showData(people.url)}
-                  >
+                  <Button size="small" onClick={() => this.showData(movie.url)}>
                     Learn More
                   </Button>
                 </CardActions>
@@ -61,7 +65,11 @@ class ProfileCard extends Component {
   }
 }
 
+MovieCard.propTypes = {
+  dataList: PropTypes.array
+};
+
 export default connect(
   null,
   { fetchDetails }
-)(ProfileCard);
+)(MovieCard);

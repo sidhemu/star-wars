@@ -1,15 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import ProfileCard from '../Profile/ProfileCard';
-import MovieCard from '../Movies/MovieCard';
-import PlanetCard from '../Planets/PlanetCard';
+import ProfileCard from '../ListCard/Profile/ProfileCard';
+import MovieCard from '../ListCard/Movies/MovieCard';
+import PlanetCard from '../ListCard/Planets/PlanetCard';
 
 const Listing = props => {
   if (props.type === 'people') {
     return (
       <div>
         <ProfileCard
-          peoplesList={props.data}
+          dataList={props.data}
           getInput={type => props.getTypeForDetail(type)}
         />
       </div>
@@ -19,7 +20,7 @@ const Listing = props => {
     return (
       <div>
         <MovieCard
-          moviesList={props.data}
+          dataList={props.data}
           getInput={type => props.getTypeForDetail(type)}
         />
       </div>
@@ -30,12 +31,17 @@ const Listing = props => {
     return (
       <div>
         <PlanetCard
-          planetList={props.data}
+          dataList={props.data}
           getInput={type => props.getTypeForDetail(type)}
         />
       </div>
     );
   }
+};
+
+Listing.propTypes = {
+  data: PropTypes.array,
+  getTypeForDetail: PropTypes.func
 };
 
 export default Listing;

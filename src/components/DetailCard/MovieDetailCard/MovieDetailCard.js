@@ -1,10 +1,10 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import { Card, CardContent, Typography } from '@material-ui/core';
 
 import './movieDetailCardStyle.css';
 
-const ProlieDetailCard = props => {
+const MovieDetailcard = props => {
   if (Object.keys(props.detailData).length > 0) {
     return (
       <div>
@@ -39,4 +39,15 @@ const ProlieDetailCard = props => {
   }
 };
 
-export default ProlieDetailCard;
+MovieDetailcard.propTypes = {
+  detailData: PropTypes.shape({
+    title: PropTypes.string,
+    episode_id: PropTypes.number,
+    opening_crawl: PropTypes.string,
+    director: PropTypes.string,
+    producer: PropTypes.string,
+    release_date: PropTypes.string
+  })
+};
+
+export default MovieDetailcard;
