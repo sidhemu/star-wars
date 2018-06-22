@@ -1,0 +1,51 @@
+.App {
+  text-align: center;
+  font-size: 24px;
+}
+
+.App-header {
+  background-color: #fff;
+  /* background-image: linear-gradient(
+    to bottom,
+    #051937,
+    #064c64,
+    #3e8185,
+    #88b7a0,
+    #deebc3
+  ); */
+  height: 350px;
+  padding: 64px 0 0 160px;
+  color: white;
+  border-bottom: 1px solid rgba(62, 62, 62, 0.2);
+}
+
+.App-title {
+  font-size: 0.7em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.drawer-div {
+  position: 'relative';
+  width: 150px;
+  font-size: 1.6rem;
+}
+
+.app-bar {
+  background-color: #3e3e3e !important;
+  z-index: 99999 !important;
+}
+.listing-div {
+  margin-bottom: 16px;
+}
+
+.drawer-div > div {
+  width: 150px;
+  padding-top: 70px;
+}
+
+.body-detail {
+  padding: 20px 0 0 160px;
+}

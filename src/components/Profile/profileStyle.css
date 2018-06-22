@@ -1,0 +1,44 @@
+.title {
+  color: #222;
+}
+
+.show-grid {
+  display: inline-flex;
+  justify-content: center;
+  text-align: left;
+}
+
+.card {
+  max-width: 275px;
+  min-width: 155px;
+}
+
+.card-profile {
+  margin: 5px 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  position: relative;
+  height: 175px;
+  cursor: pointer;
+}
+
+.btn-view {
+  display: none;
+  color: #fff !important;
+  background: transparent !important;
+  letter-spacing: 2px;
+  position: absolute;
+  width: 100%;
+  right: 0px;
+  bottom: 0px;
+  text-shadow: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+}
+
+.card-profile:hover .btn-view {
+  display: block;
+}

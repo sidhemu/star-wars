@@ -1,0 +1,15 @@
+.detail-card {
+  min-width: 400px;
+  max-width: calc(100% - 15px);
+  text-align: left;
+  font-family: 'Lato', sans-serif;
+}
+.detail-card div h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.detail-card div p span {
+  font-size: 1.4rem;
+}

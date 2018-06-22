@@ -1,0 +1,22 @@
+.card {
+  max-width: 275px;
+  margin: 0 5px;
+  min-width: 155px;
+}
+
+.title {
+  margin-bottom: 16;
+  font-size: 14;
+}
+
+.secondary-text {
+  margin-bottom: 12px;
+}
+
+.release-date {
+  margin-top: 5px !important;
+}
+
+.title {
+  color: #222;
+}
