@@ -21,7 +21,7 @@ const PlanetDetailCard = props => {
                 Orbital : {props.detailData.orbital_period}
               </Typography>
               <Typography component="span">
-                Diameter : {props.detailData.diameter} Kilos
+                Diameter : {props.detailData.diameter} KM
               </Typography>
               <Typography component="span">
                 Climate : {props.detailData.climate}
